@@ -1,0 +1,43 @@
+<br>
+<br>
+<br>
+<div style="text-align: center; margin-left: 10%; margin-right: 10%">
+  <div style="border: 1px solid">
+    <p>{{message$ | async }}</p>
+    <p>{{message}}</p>
+
+    <button (click)="showEnglishMessage()">English</button>
+    <button (click)="showZuluMessage()">IsiZulu</button>
+    <br>
+    <br>
+  </div>
+  <br>
+  <br>
+
+  <hr>
+
+  <br>
+  <br>
+
+  <div style="border: 1px solid">
+    <div *ngIf="post$ | async as myPost">
+      <p><b>Post:</b></p>
+      <p>{{myPost.text}}</p>
+      <p><b>Votes:</b> {{myPost.likes}}</p>
+
+      <button (click)="upvotePost()">Upvote</button>
+      <button (click)="downPost()">Downvote</button>
+      <button (click)="resetPost()">Reset</button>
+      <br>
+      <br>
+
+      <input [(ngModel)]="text" />
+      <br>
+      <br>
+      <button (click)="editText()">Change Title</button>
+      <br>
+      <br>
+    </div>
+  </div>
+
+</div>
